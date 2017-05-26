@@ -69,8 +69,8 @@ class Dashboard extends Component {
   }
 
   renderAddLecture() {
-    const { currentCohortId } = this.props;
-    return (<AddLecture history={this.props.history} cohortId={currentCohortId} fetchTeacherInfo={this.fetchTeacherInfo} />);
+    const { currentCohortId, history } = this.props;
+    return (<AddLecture history={history} cohortId={currentCohortId} fetchTeacherInfo={this.fetchTeacherInfo} />);
   }
 
   renderLecturesList() {

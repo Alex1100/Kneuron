@@ -18,7 +18,6 @@ class Cohort extends Component {
   async deleteClass() {
     try {
       const removed = await axios.delete(`/api/cohorts/${localStorage.getItem('id_token')}/${this.props.cohort.id}`);
-      if (removed) {
         this.props.fetchTeacherInfo()
           .then(() => {
             this.props.history.push('/dashboard/class');
@@ -26,7 +25,6 @@ class Cohort extends Component {
           .catch((err) => {
             console.log('error with deleting class , ERR: ', err);
           });
-      }
     } catch (error) {
       console.log(error);
     }

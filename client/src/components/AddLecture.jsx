@@ -12,6 +12,10 @@ class AddLecture extends Component {
   }
 
 
+  // componentDidUnmount(){
+  //   this.props.fetchTeacherInfo();
+  // }
+
   handleChange(e) {
     const name = e.target.name;
     console.log(this.props);
@@ -49,6 +53,6 @@ class AddLecture extends Component {
       </div>
     );
   }
-}
+};
 
 export default AddLecture;
