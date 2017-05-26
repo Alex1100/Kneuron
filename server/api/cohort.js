@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const db = require('../db/models');
+const redis = require('../db/redis');
 const antiHasher = require('./util').antiHasher;
 
 // Controller
@@ -37,11 +38,14 @@ const postCohort = async (req, res) => {
       } else {
         // Else Create the Cohort
         req.body['teacher_id'] = teacher.id;
-        req.body['time'] = req.body.time;
+        req.body['time'] = req.body.time.toUpperCase();
         req.body['subject'] = req.body.subject.toUpperCase();
         const newCohort = await db.Cohort.create(req.body);
         if (newCohort) {
           console.log(`${teacher.fName} ${teacher.lName} just added a new ${newCohort.subject} cohort to their schedule.`, newCohort);
+          const oldData = await redis.get('allTeacherData');
+          JSON.parse(oldData).cohort.push(newCohort);
+          redis.set('allTeacherData', JSON.stringify(oldData));
           res.status(201).send(newCohort);
         } else {
           res.status(404).send('Failed To Create New Cohort');

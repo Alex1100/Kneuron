@@ -1,7 +1,7 @@
 import React from 'react';
 import QuestionEntry from './QuestionEntry';
 
-const QuestionList = props => (
+const QuestionsList = props => (
   <div>
     {props.questions.map(question => (
       <QuestionEntry name={question.name} choices={question.choices} />
@@ -10,5 +10,4 @@ const QuestionList = props => (
 );
 
 
-
-export default QuestionList;
+export default QuestionsList;

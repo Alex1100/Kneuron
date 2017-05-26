@@ -3,7 +3,7 @@ import Topic from './Topic';
 
 
 const TopicsList = props => (
-  <div>
+  <div className="cohort-holder">
     {props.topics.map(topic => (
       <Topic topic={topic}/>
     ))}

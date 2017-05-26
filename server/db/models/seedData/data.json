@@ -78,7 +78,7 @@
     "model": "Lecture",
     "data": {
       "id": 1,
-      "name": "Addition",
+      "name": "Addition Lecture",
       "cohort_id": 1
     }
   },
@@ -86,7 +86,7 @@
     "model": "Lecture",
     "data": {
       "id": 2,
-      "name": "Addition",
+      "name": "Subtraction Lecture",
       "cohort_id": 2
     }
   },
@@ -94,7 +94,7 @@
     "model": "Lecture",
     "data": {
       "id": 3,
-      "name": "Addition",
+      "name": "Multiplacation Lecture",
       "cohort_id": 1
     }
   },
@@ -102,7 +102,7 @@
     "model": "Lecture",
     "data": {
       "id": 4,
-      "name": "Addition",
+      "name": "Division Lecture",
       "cohort_id": 3
     }
   },
@@ -110,7 +110,7 @@
     "model": "Lecture",
     "data": {
       "id": 5,
-      "name": "Addition",
+      "name": "Long Division Lecture",
       "cohort_id": 3
     }
   },
@@ -118,7 +118,7 @@
     "model": "Topic",
     "data": {
       "id": 1,
-      "name": "Short Addition",
+      "name": "Short Addition Topic",
       "lecture_id": 1
     }
   },
@@ -126,7 +126,7 @@
     "model": "Topic",
     "data": {
       "id": 2,
-      "name": "Short Addition",
+      "name": "Short Subtraction Topic",
       "lecture_id": 3
     }
   },
@@ -134,7 +134,7 @@
     "model": "Topic",
     "data": {
       "id": 3,
-      "name": "Short Addition",
+      "name": "Short Multiplication Topic",
       "lecture_id": 2
     }
   },
@@ -142,7 +142,7 @@
     "model": "Quiz",
     "data": {
       "id": 1,
-      "name": "Short Addition Quiz",
+      "name": "Short Division Quiz",
       "topic_id": 1
     }
   },

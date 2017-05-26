@@ -12,6 +12,8 @@ import EditLecture from '../components/EditLecture';
 import CohortsList from '../components/CohortsList';
 import CurrentLecture from '../components/CurrentLecture';
 import LecturesList from '../components/LecturesList';
+import QuizList from '../components/QuizList';
+import TopicsList from '../components/TopicsList';
 import { allLectures } from '../actions/lectures';
 import { currentLecture } from '../actions/currentLecture';
 
@@ -30,7 +32,7 @@ class Dashboard extends Component {
     this.renderCurrentLecture = this.renderCurrentLecture.bind(this);
     this.handleLectureClick = this.handleLectureClick.bind(this);
     this.renderAddClass = this.renderAddClass.bind(this);
-    this.renderAddLecture = this.renderAddLecture.bind(this);
+    this.renderQuiz = this.renderQuiz.bind(this);
   }
 
   componentDidMount() {
@@ -64,6 +66,11 @@ class Dashboard extends Component {
     />);
   }
 
+  renderQuiz() {
+    const { quizzes } = this.props
+    return (<QuizList history={this.props.history} fetchTeacherInfo={this.fetchTeacherInfo} quizzes={quizzes || []} />);
+  }
+
   renderAddClass() {
     return (<AddClass history={this.props.history} fetchTeacherInfo={this.fetchTeacherInfo} />);
   }
@@ -93,7 +100,7 @@ class Dashboard extends Component {
     const { dispatch } = this.props;
     console.log(this.state);
     console.log('these are the props ', this.props);
-    const currentLectureRoute = `/dashboard/lectures/${this.state.selectedLecture}`;
+    const currentLectureRoute = `/dashboard/lectures${this.state.selectedLecture}`;
     return (
       <div className="dashboard-content">
         <DashNav dispatch={dispatch} />
@@ -101,8 +108,7 @@ class Dashboard extends Component {
         <Route path="/dashboard/lectures" render={this.renderLecturesList} />
         <Route path="/dashboard/addClass" render={this.renderAddClass} />
         <Route path="/dashboard/editClass" component={EditClass} />
-        <Route path="/dashboard/addLecture" render={this.renderAddLecture} />
-        <Route path="/dashboard/editLecture" component={EditLecture} />
+        <Route path="/dashboard/quiz" render={this.renderQuiz} />
         <Route path={currentLectureRoute} render={this.renderCurrentLecture} />
       </div>
     );
@@ -120,6 +126,7 @@ const mapStateToProps = (state) => {
   const { email, username, userType, fName, lName, cohort } = state.profile;
   const { lectures, currentCohortId } = state.lectures;
   const { lectureId, name, topics } = state.currentLecture;
+  const { topicId, quizzes } = state.currentTopic;
   return {
     email,
     username,
@@ -132,6 +139,8 @@ const mapStateToProps = (state) => {
     currentCohortId,
     name,
     topics,
+    topicId,
+    quizzes,
   };
 };
 

@@ -11,10 +11,11 @@ const saltRounds = 10;
 // Fetch ALL INFORMATION on Teacher
 const fetchAllTeacherData = async (req, res) => {
   try {
-    const redisTeacherData = await redis.get('allTeacherData');
+    let redisTeacherData = await redis.get('allTeacherData');
+    redisTeacherData = JSON.parse(redisTeacherData);
     const email = antiHasher(req.params.auth_token);
-    if (redisTeacherData !== 'null' && JSON.parse(redisTeacherData).email === email) {
-      res.status(200).send(JSON.parse(redisTeacherData));
+    if (redisTeacherData !== null && redisTeacherData.email === email) {
+      res.status(200).send(redisTeacherData);
     } else {
       const allData = await db.User.findOne({
         where: {
