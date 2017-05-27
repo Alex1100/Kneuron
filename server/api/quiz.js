@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const db = require('../db/models');
-const redis = require('../db/redis');
+// const redis = require('../db/redis');
 
 const postQuiz = async (req, res) => {
   try {

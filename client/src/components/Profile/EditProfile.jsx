@@ -7,7 +7,7 @@ class EditProfile extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {      
+    this.state = {
         fName: 'jason',
         lName: 'kim',
         username: 'jasonk',

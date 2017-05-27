@@ -1,6 +1,7 @@
 import React from 'react';
 import QuestionsList from '../../components/Questions/QuestionsList';
 
+
 const CurrentLectureTopicsListEntry = props => (
   <div>
     <p>{props.topic.name}</p>

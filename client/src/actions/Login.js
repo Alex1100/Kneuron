@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const LOGIN_REQUEST = 'LOGIN_REQUEST'
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
-export const LOGIN_FAILURE = 'LOGIN_FAILURE'
+export const LOGIN_REQUEST = 'LOGIN_REQUEST';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGOUT_REQUEST = 'LOGOUT_REQUEST';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const LOGOUT_FAILURE = 'LOGOUT_FAILURE';
@@ -44,7 +44,6 @@ exports.loginUser = (creds, history) => {
   console.log('This is Creds: ', creds);
   return (dispatch) => {
     dispatch(requestLogin(creds));
-
     return axios.get(`http://localhost:8080/api/teachers/${creds.email}/${creds.password}`)
       .then((response) => {
         console.log(response);
@@ -83,13 +82,13 @@ exports.signupUser = (creds, history) => {
         console.log(response);
         if (response.statusText !== 'Created') {
           dispatch(loginError('Bad Request...'));
-          console.log('user did not sign up succesfully')
+          console.log('user did not sign up succesfully');
           return Promise.reject(response);
         }
         localStorage.setItem('id_token', response.data.id_token);
         localStorage.setItem('access_token', response.data.id_token);
         dispatch(receiveLogin(response.data));
-        console.log('user did sign up succesfully')
+        console.log('user did sign up succesfully');
         history.push('/dashboard');
       })
       .catch((err) => {
@@ -102,7 +101,7 @@ exports.signupUser = (creds, history) => {
 exports.logoutUser = () => {
   console.log('yooo logout ran');
   return (dispatch) => {
-    console.log('got into dispatch line 96 action/login.js')
+    console.log('got into dispatch line 96 action/Login.js');
     dispatch(requestLogout());
     console.log('got past the dispatch');
     localStorage.removeItem('id_token');

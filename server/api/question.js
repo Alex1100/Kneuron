@@ -3,8 +3,10 @@ const db = require('../db/models');
 const redis = require('../db/redis');
 
 const postQuestion = async (req, res) => {
+  console.log(req.body, ' THIS IS THE REQ DOT BODY   ');
   try {
     const quiz = await db.Quiz.findOne({ where: { id: req.body.quiz_id } });
+    console.log('this is the qui we tryna hit', quiz);
     if (quiz) {
       req.body['quiz_id'] = quiz.id;
       req.body['name'] = req.body.name;

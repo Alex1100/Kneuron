@@ -3,6 +3,7 @@ import Login from '../../components/Logging/Login';
 import NavBar from './FrontPageNav';
 import { loginUser } from '../../actions/Login';
 
+
 class FrontPage extends Component {
   constructor(props) {
     super(props);

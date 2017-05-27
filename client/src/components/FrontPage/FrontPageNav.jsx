@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/main.css';
+import '../../styles/Main.css';
+
 
 const NavBar = () => (
   <nav className="front-nav">

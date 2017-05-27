@@ -103,7 +103,9 @@ const fetchStudents = async (req, res) => {
 const fetchTeacher = async (req, res) => {
   try {
     const user = await db.User.findOne({ where: { email: req.params.email } });
+    console.log('this is the user info line 58   ,', user);
     const data = await bcrypt.compare(req.params.creds, user.password);
+    console.log('this is data line 60 true or fale , ', data);
     if (data) {
       console.log('User Logged In: ', { user: user, id_token: hasher(`${req.params.email}`) });
       res.status(200).send({ user: user, id_token: hasher(req.params.email) });
