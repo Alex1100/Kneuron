@@ -3,7 +3,6 @@ import { Route, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-<<<<<<< HEAD:client/src/components/Dashboard/Dashboard.jsx
 import { updateProfile } from '../../actions/CurrentProfile';
 import DashNav from './DashboardNavBar';
 import AddClass from '../../components/Cohorts/AddClass';
