@@ -6,11 +6,11 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-const PORT = process.env.PORT || 5000;
 
 require('dotenv').config();
 require('dotenv').load();
 
+const PORT = process.env.PORT || 5000;
 const router = require('./api/index');
 const bodyparser = require('body-parser');
 const cors = require('cors');

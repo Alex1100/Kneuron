@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/index.js & webpack -w"
+    "start": "node server/index.js"
   },
   "repository": {
     "url": "git+https://github.com/fuego-nuevo/Kneuron.git",
