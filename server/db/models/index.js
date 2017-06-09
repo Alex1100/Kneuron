@@ -210,19 +210,19 @@ Lecture.hasMany(Result, { foreignKey: { name: 'lecture_id', allowNull: false }, 
 Result.belongsTo(Lecture, { foreignKey: { name: 'lecture_id', allowNull: false }, onDelete: 'CASCADE' });
 
 //add this to the db
-// School.sync({ force: true })
-//   .then(() => User.sync({ force: true }))
-//   .then(() => Cohort.sync({ force: true }))
-//   .then(() => StudentCohort.sync({ force: true }))
-//   .then(() => Lecture.sync({ force: true }))
-//   .then(() => Attendance.sync({ force: true }))
-//   .then(() => Topic.sync({ force: true }))
-//   .then(() => StudentQuestion.sync({ force: true }))
-//   .then(() => Quiz.sync({ force: true }))
-//   .then(() => Question.sync({ force: true }))
-//   .then(() => Answer.sync({ force: true }))
-//   .then(() => Result.sync({ force: true }))
-//   .catch((err) => { console.log(err); });
+ School.sync({ force: true })
+   .then(() => User.sync({ force: true }))
+   .then(() => Cohort.sync({ force: true }))
+   .then(() => StudentCohort.sync({ force: true }))
+   .then(() => Lecture.sync({ force: true }))
+   .then(() => Attendance.sync({ force: true }))
+   .then(() => Topic.sync({ force: true }))
+   .then(() => StudentQuestion.sync({ force: true }))
+   .then(() => Quiz.sync({ force: true }))
+   .then(() => Question.sync({ force: true }))
+   .then(() => Answer.sync({ force: true }))
+   .then(() => Result.sync({ force: true }))
+   .catch((err) => { console.log(err); });
 
 module.exports = {
   School,
